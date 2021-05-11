@@ -1,0 +1,15 @@
+.CARDSWRAPPER{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center; 
+    margin: 2% 0;   
+}
+@media screen and (max-width:768px) {
+    .CARDSWRAPPER{
+        flex-direction: column;
+        margin: 2% 0;
+    }
+    .MOBILEVIEW{
+        margin: 3% 0;
+    }
+}

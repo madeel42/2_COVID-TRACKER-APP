@@ -1,0 +1,14 @@
+.CHARTSVIEW{
+    position: relative;
+    width: 80vw;
+    margin: auto;
+}
+
+@media  (max-width:768px) {
+    /* .CHARTSVIEW{
+        width: 65%;
+        height: 350px;
+        margin: auto;
+    } */
+
+}

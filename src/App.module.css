@@ -6,7 +6,12 @@
   height: 40vmin;
   pointer-events: none;
 }
-
+.DROPDOWN{
+  width: 19vw;
+  display: grid;
+  margin: auto;
+  margin-bottom: 2%;
+}
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
@@ -34,5 +39,24 @@
   }
   to {
     transform: rotate(360deg);
+  }
+}
+.CHARTSVIEW{
+  position: relative;
+  width: 80vw;
+  margin: auto;
+}
+
+@media  (max-width:768px) {
+  /* .CHARTSVIEW{
+      width: 65%;
+      height: 350px;
+      margin: auto;
+  } */
+  .DROPDOWN{
+      width: 70vw;
+      display: grid;
+      margin: auto;
+      margin-bottom: 2%;
   }
 }
