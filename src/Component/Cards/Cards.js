@@ -4,7 +4,6 @@ import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 import Typography from '@material-ui/core/Typography';
 import styles from './Cards.module.css'
-
 const useStyles = makeStyles({
     root: {
         minWidth: 275,
@@ -24,11 +23,7 @@ const useStyles = makeStyles({
 });
 
 export function Cards({ SingleCountryData }) {
-    // const data = resource.read()
-    // console.log(data, 'data')
-
     const classes = useStyles();
-
     return <div className={styles.CARDSWRAPPER}>
         <Card className={`${classes.root} ${styles.MOBILEVIEW}`}>
             <CardContent>
@@ -37,9 +32,9 @@ export function Cards({ SingleCountryData }) {
         </Typography>
                 <Typography variant="h5" component="h2">
                     {SingleCountryData.ActiveCases_text}
-        </Typography>
+                </Typography>
                 <Typography className={classes.pos} color="textSecondary">
-                {SingleCountryData.LastUpdate}
+                    {SingleCountryData.LastUpdate}
                 </Typography>
                 <Typography variant="body2" component="p">
                     Number of active cases
@@ -55,7 +50,7 @@ export function Cards({ SingleCountryData }) {
       </Typography>
                 <Typography variant="h5" component="h2">
                     {SingleCountryData.TotalRecovered_text}
-      </Typography>
+                </Typography>
                 <Typography className={classes.pos} color="textSecondary">
                     {SingleCountryData.LastUpdate}
                 </Typography>
@@ -73,9 +68,9 @@ export function Cards({ SingleCountryData }) {
       </Typography>
                 <Typography variant="h5" component="h2">
                     {SingleCountryData.TotalDeaths_text}
-      </Typography>
+                </Typography>
                 <Typography className={classes.pos} color="textSecondary">
-                {SingleCountryData.LastUpdate}
+                    {SingleCountryData.LastUpdate}
                 </Typography>
                 <Typography variant="body2" component="p">
                     Number of deaths caused

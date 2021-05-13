@@ -1,59 +1,6 @@
 import React from 'react';
 import { Bar } from 'react-chartjs-2';
 import classes from './Charts.module.css'
-
-const data = {
-  labels: ['Infected', 'Recover', 'Death'],
-  datasets: [
-    {
-      label: 'Infected',
-      data: [12, 10, 3],
-      backgroundColor: [
-        'rgb(142, 119, 25, 0.3)'
-        // 'rgba(54, 162, 235, 0.2)',
-        // 'rgba(255, 206, 86, 0.2)',
-      ],
-      borderColor: [
-        'rgba(255, 99, 132, 1)',
-
-
-      ],
-      borderWidth: 1,
-      responsive: true,
-    },
-    {
-      label: 'Recover',
-      data: [66, 13, 56],
-      backgroundColor: [
-        'rgba(255, 99, 132, 0.2)',
-        // 'rgba(54, 162, 235, 0.2)',
-        // 'rgba(255, 206, 86, 0.2)',
-
-      ],
-      borderColor: [
-        'rgba(255, 99, 132, 1)',
-
-
-      ],
-      borderWidth: 1,
-      responsive: true,
-    },
-    {
-      label: 'Death',
-      data: [52, 96, 55],
-      backgroundColor: [
-        'rgb(39, 189, 149, 0.1)',
-
-      ],
-      borderColor: [
-        'rgb(39, 189, 149, 0.1)',
-      ],
-      borderWidth: 1,
-      responsive: true,
-    },
-  ],
-};
-
 const options = {
   scales: {
     yAxes: [
@@ -66,9 +13,32 @@ const options = {
   },
 };
 
-const VerticalBar = () => {
+const VerticalBar = ({ SingleCountryData }) => {
+  const { ActiveCases_text, TotalRecovered_text, TotalDeaths_text } = SingleCountryData
+  console.log()
+  const data = {
+    labels: ['Infected', 'Recover', 'Death'],
+    datasets: [
+      {
+        label: 'Country Statics',
+        data: [ActiveCases_text && parseInt(ActiveCases_text && ActiveCases_text?.replace(/,/g, '')), TotalRecovered_text && parseInt(TotalRecovered_text && TotalRecovered_text?.replace(/,/g, '')), TotalDeaths_text && parseInt(TotalDeaths_text && TotalDeaths_text?.replace(/,/g, ''))],
+        backgroundColor: [
+          'rgba(255, 99, 132, 0.7)',
+          'rgba(54, 162, 235, 0.7)',
+          'rgba(255, 206, 86, 0.7)',
+        ],
+        borderColor: [
+          'rgba(255, 99, 132, 0.2)',
+          'rgba(54, 162, 235, 0.2)',
+          'rgba(255, 206, 86, 0.7)',
+        ],
+        borderWidth: 1,
+        responsive: true,
+      },
+    ],
+  };
   return <>
-   
+
     <div className={classes.CHARTSVIEW}>
       <Bar data={data} width={150} height={70} options={options} />
     </div>
