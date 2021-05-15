@@ -11,7 +11,7 @@ export const Main = ({ resource }) => {
         selectedCountry: 'World'
     });
     useEffect(() => {
-        let CountryData = JSON.parse(JSON.stringify(data).replace(/\s(?=\w+":)/g, "")).map(country => {
+        let CountryData = data && JSON.parse(JSON.stringify(data).replace(/\s(?=\w+":)/g, "")).map(country => {
             country.id = Math.random();
             return country.Country_text
         })
